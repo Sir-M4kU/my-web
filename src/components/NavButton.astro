@@ -1,0 +1,25 @@
+---
+interface Props {
+  href: string
+  type: 'network' | 'web-nav'
+}
+
+const {
+  type,
+  href
+} = Astro.props
+---
+
+<a
+  class=""
+  class:list={[
+    "transition ease-in",
+    {
+      "text-gray-400 hover:text-gray-100": type === 'network',
+      "px-4 py-2 rounded-md hover:bg-[#424549]": type === 'web-nav'
+    }
+  ]}
+  href={href}
+>
+  <slot />
+</a>
