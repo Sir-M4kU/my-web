@@ -18,11 +18,14 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>M4KU | {title}</title>
 	</head>
-	<body class="max-w-5xl mx-auto bg-[#1e2124] text-white font-roboto">
+	<body class="md:grid max-w-5xl md:gap-4 md:mx-auto bg-[#1e2124] text-white font-roboto">
 		<Header />
 		<main>
 			<slot />
 		</main>
+		<footer>
+			<h2>TODO... HACER UN FOOTER</h2>
+		</footer>
 	</body>
 </html>
 
