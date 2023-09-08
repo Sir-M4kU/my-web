@@ -1,0 +1,27 @@
+---
+import Repos from '../mocks/github-repos.json'
+import ProjectArticles from './ProjectArticles.astro'
+---
+
+<div class="grid gap-4 md:place-items-center" id="my-work">
+  <header>
+    <h2 class="font-barlow my-4 text-center text-4xl text-blue-400">
+      Mis proyectos
+    </h2>
+    <p class="text-center">
+      Cada proyecto lleva a su correspondiente repositorio
+    </p>
+  </header>
+
+  {
+    Repos.map(({ name, description, url, img, languages }) => (
+      <ProjectArticles
+        title={name}
+        description={description}
+        img={img}
+        link={url}
+        languages={languages}
+      />
+    ))
+  }
+</div>
