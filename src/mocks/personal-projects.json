@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "title": "Alice discord bot",
+      "description": "Alice es un bot de discord que cree como proyecto personal para escuchar musica con amigos, actualmente es de codigo privado.",
+      "link": ""
+    },
+    {
+      "title": "FileHub",
+      "description": "Proyecto FullStack tipo Google Drive para subir y descargar archivos y compartirlos con otros usuarios.",
+      "link": "https://github.com/Sir-M4kU/filehub"
+    }
+  ]
+}
