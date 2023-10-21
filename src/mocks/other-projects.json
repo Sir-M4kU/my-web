@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "title": "Reading books Vue",
+      "description": "Aplicacion de listar libros y añadirlos a una lista de de lectura",
+      "link": "https://github.com/Sir-M4kU/reading-books-vue"
+    },
+    {
+      "title": "Mi portfolio",
+      "description": "Esta misma pagina",
+      "link": "https://github.com/Sir-M4kU/my-web"
+    },
+    {
+      "title": "Users Table Vue",
+      "description": "Aplicacion para listar usuarios en una tabla y filtrarlos por nombre o pais.",
+      "link": "https://github.com/Sir-M4kU/vue-users-table"
+    },
+    {
+      "title": "Todo Vue",
+      "description": "Aplicacion de todos",
+      "link": "https://github.com/Sir-M4kU/todo-vue"
+    }
+  ]
+}
