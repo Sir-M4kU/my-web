@@ -1,45 +1,48 @@
 ---
-import NavButton from "../NavButton.astro";
+import NavButton from "../NavButton.astro"
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <div class="flex flex-col-reverse">
-  <ul class="hidden fixed w-full top-16 text-right md:text-center rounded-lg bg-slate-900 md:bg-transparent right-0 md:static md:flex md:gap-6" id="links" id="links">
+  <input class="hidden peer" type="checkbox" id="menu-btn"/>
+  <span class="sr-only">Abrir menu principal</span>
+  <label class="sm:hidden" for="menu-btn">
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="text-gray-400 hover:text-gray-200 transition ease-in rounded-md"
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="currentColor"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M4 6l16 0"></path>
+    <path d="M4 12l16 0"></path>
+    <path d="M4 18l16 0"></path>
+    </svg>
+  </label>
+  <ul class="peer-checked:block hidden fixed w-full h-full top-16 text-right sm:text-center rounded-lg bg-slate-900 sm:bg-transparent right-0 sm:static sm:flex md:gap-6">
     <li>
-      <NavButton href="/#" type="web-nav">Inicio</NavButton>
+      <NavButton href={`/${lang}/#`} type="web-nav">
+        {t('nav.home')}
+      </NavButton>
     </li>
     <li>
-      <NavButton href="/#my-work" type="web-nav">Mis proyectos</NavButton>
+      <NavButton href={`/${lang}/#projects`} type="web-nav">
+        {t('nav.projects')}
+      </NavButton>
     </li>
     <li>
-      <NavButton href="/#acerca-de-mi" type="web-nav">Acerca de mi</NavButton>
+      <NavButton href={`/${lang}/#about-me`} type="web-nav">
+        {t('nav.about')}
+      </NavButton>
     </li>
   </ul>
-  <button class="md:hidden" type="button" id="mobile-btn">
-    <span class="sr-only">Abrir menu principal</span>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="text-gray-400 hover:text-gray-200 transition ease-in rounded-md"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="currentColor"
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M4 6l16 0"></path>
-      <path d="M4 12l16 0"></path>
-      <path d="M4 18l16 0"></path>
-    </svg>
-  </button>
 </div>
-
-<script>
-  const $linksContainer = document.querySelector("#links") as HTMLUListElement;
-  const $button = document.querySelector("#mobile-btn") as HTMLButtonElement;
-  $button.addEventListener("click", (e) => {
-    $linksContainer.classList.toggle("hidden");
-  });
-</script>

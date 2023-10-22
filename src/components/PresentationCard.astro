@@ -1,17 +1,24 @@
+---
+import { useTranslations, getLangFromUrl } from '../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
 <div class="flex bg-gradient-to-b flex-col-reverse sm:flex-row items-center from-blue-700 to-gray-800 sm:rounded-xl p-4 sm:p-8">
   <aside class="flex flex-col gap-6 justify-center">
     <h2 class="font-barlow text-5xl md:text-7xl md:text-left text-center">
-        Hola soy
+      {t('home.h2')}
         <span class="text-blue-400">
           Camilo
         </span>
     </h2>
     <p class="md:text-2xl text-lg md:text-left text-center">
-        Desarrollador Junior en tecnologias web y de Back-end en
+      {t('home.p')}
         <span class="bg-yellow-400 text-yellow-700 px-2 rounded-lg">
             JavaScript
         </span>
-        y
+      {t('home.p.and')}
         <span class="bg-blue-400 text-blue-700 px-2 rounded-md">
             TypeScript
         </span>.
